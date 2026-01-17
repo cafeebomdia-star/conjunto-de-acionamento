@@ -13,10 +13,8 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script>
-      // Configuração de ambiente básica
       window.process = { env: { API_KEY: "" } };
       
-      // Capturador de erros visual para ajudar no debug
       window.onerror = function(msg, url, lineNo, columnNo, error) {
         const debug = document.getElementById('debug-error');
         if (debug) {
@@ -64,7 +62,6 @@
     </div>
     <div id="debug-error"></div>
     
-    <!-- O código principal agora é carregado diretamente aqui para evitar erros de importação externa -->
     <script type="text/babel" data-presets="react,typescript" data-type="module">
       import React from 'react';
       import ReactDOM from 'react-dom/client';
@@ -80,7 +77,6 @@
         );
       }
 
-      // Remove o loader assim que o React montar
       const loader = document.getElementById('initial-loader');
       if (loader) {
         setTimeout(() => loader.style.display = 'none', 500);
